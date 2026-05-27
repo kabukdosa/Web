@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>table ex</title>
+    </head>
+    <body>
+        
+        <h2>Table 요소 연습</h2>
+
+        <table border="1">
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>메세지</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>sam</td>
+                <td>hello table</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>robin</td>
+                <td>nice to meet you</td>
+                <!-- 각 행(row)의 셀(칸)개수가 달라도 됨  -->
+                <td>2026-05-26</td> 
+            </tr>
+
+            <!-- 표 제목 표시하기 (작성 위치와 상관없이 무조건 표의 상단에 표시됨) css를 통해 위치 조정 가능함 -->
+            <caption>테이블 제목</caption>
+        </table>
+
+        <hr>
+
+        <!-- 테이블 칸(셀)안에 다른 요소를 넣어보기 -->
+         <table border="1" width="100%">
+            <tr>
+                <td width="30%"><a href="http://www.naver.com">네이버로 이동</a></td>
+                <td>
+                    <ul>
+                        <li>aaa</li>
+                        <li>bbb</li>
+                        <li>ccc</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>테이블 안에 어떤 요소든 넣을 수 있음. 한글이면 자동 줄 바꿈</p>
+                    <P>adsf jasdkfas;fsdfjsdakfsad;fsdsfasdfasfadsfasdfaddafksf;as</P>
+                </td>
+                <td>
+                    <img src="./image/newyork.jpg" alt="뉴욕이미지" width="70%">
+                </td>
+            </tr>
+
+         </table>
+
+         <hr>
+
+         <table border="1">
+            <tr>
+                <!-- 다음줄이 없으면 span은 반영되지 않음 -->
+                <td rowspan="2">111</td>
+                <td colspan="3">222</td>
+                <td>333</td>
+            </tr>
+            <tr>
+                <td>444</td>
+                <td>555</td>
+                <td>66666666666</td>
+            </tr>
+
+         </table>
+
+    </body>
+</html>

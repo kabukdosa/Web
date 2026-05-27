@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>element ex</title>
+    </head>
+    <body>
+        
+        <!-- 1. audio 요소 -->
+         <audio src="./audio/old_pop.mp3" controls="controls">오디오 태그가 지원되지 않으면 보이는 글씨</audio>
+
+         <!-- 브라우저 마다 지원가능한 음원의 유형이 다르기에..대응하기!! -->
+          <audio control>
+            <!-- type은 MIME 타입을 지정 -->
+            <source src="./audio/old_pop.mp3" type="audio/mp3">
+            <source src="./audio/old_pop.wav" type="audio/wav">
+            <source src="./audio/old_pop.ogg" type="audio/ogg">
+          </audio>
+          <!-- 미디어파일 무료 변환 사이트 online-converter.com -->
+
+        <hr>
+        <!-- 2. 비디오 요소 -->
+        <video controls>
+            <source src="./video/movie.ogv" type="video/ogg">
+        </video>
+
+        <!-- autoplay muted 와 함께 있어야... 자동 재생 가능함 -->
+        <video controls width="480" height="320" poster="./image/paris.jpg" autoplay muted>
+            <source src="./video/trailer.mp4" type="video/mp4">
+            <source src="./video/trailer.webm" type="video/webm">
+            <source src="./video/trailer.ogv" type="video/ogg">
+        </video>
+
+        <!-- 예전에.. 미디어파일 전용 요소가 없을때 사용하던 요소 [embed, object] -->
+        <embed src="./SQL.pdf" type="application/pdf"><!--가장 오래전 요소-->
+        <hr>
+        <object data="./SQL.pdf" type="application/pdf" width="50%" height="300"></object>
+        <hr>
+        <!-- 현재는 embed, object ==> iframe 으로 사용하는 것을 권장 -->
+        
+
+        <!-- 3. iframe [inline frame] : 다른 HTML문서를 내 문서 안에서 보여주기 -->
+        <!-- 1)상대경로 -->
+        <iframe src="./01_table.html" frameborder="1"></iframe>
+        <!-- 2)절대경로 -->
+        <iframe src="http://mbca2025aix.dothome.co.kr" frameborder="0"></iframe>
+        <iframe src="https://sr.mbccomputer.co.kr/front/home?gad_source=1&gad_campaignid=21300389686&gbraid=0AAAAA9rzfTcncFaD6M-fnk7SMSPGqYfES&gclid=CjwKCAjw5s_QBhAdEiwADD_gBu6reQhj20qbwxDIJgx_Cnvb3zJdUA6CS1boraUUIPWFnF-RO0fqChoCilAQAvD_BwE"></iframe>
+        <hr>
+        <!-- 3)하이퍼링크 요소<a>에 의해 열리는 페이지를 iframe 안에 열리도록.. name속성 지정 -->
+        <iframe src="" frameborder="2" name="aaa" width="480"></iframe>
+        <a href="http://www.daum.net" target="aaa">다음 포털 사이트</a>
+        <!-- iframe 이 열지 못하는 사이트도 존재함. 보통 동적으로 화면을 구성하는 사이트들(요즘 많은 사이트가 이렇게 만들고 있음.) -->
+        <a href="http://www.naver.com" target="aaa">네이버 포털 사이트</a>
+        <hr>
+        <!-- pdf 파일 뷰어도 iframe 을 권장함 -->
+        <iframe src="./SQL.pdf" frameborder="0" width="50%" height="300"></iframe>
+        <hr>
+
+        <!-- 4. 화면의 일부 영역을 구분하는 용도의 요소 2개 : div, span -->
+        <div style="background-color: yellow; border: 2px solid red; padding-left: 10px;">
+            <h2>TITLE</h2>
+            <p>This is message.</p>
+        </div>
+
+        <!-- div의 블럭요소 특징 -->
+        <p>
+            안녕하세요. 나는 <div style="color: blue;">홍길동</div> 입니다.
+        </p>
+        
+        <!-- span의 인라인요소 특징 -->
+        <p>
+            안녕하세요. 나는 <span style="color: blue;">홍길동</span> 입니다.
+        </p>
+
+        <hr>
+
+        <!-- div요소는 실제 현업의 프론트엔드 화면개발 할 때 가장 많이 사용함. -->
+        <!-- 웹 페이지를 만들 때 보통 먼저 페이지의 구조를 구성하는 것 부터 시작함. -->
+        <!-- 이 때 div를 사용함 -->
+        <div id="header" style="background-color: yellow;">앱 상단 로고 영역</div>
+        <div id="main" style="background-color: green; height: 400px;">메인 영역</div>
+        <div id="footer" style="background-color: blue;">앱 하단 바 영역</div>
+
+
+    </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>03 ex</title>
+    </head>
+    <body>
+
+        <!-- 1. 리스트 -->
+        <ul>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ul> 
+
+        <ol>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ol>
+
+        <dl>
+            <dt>aaa</dt>
+            <dd>aaa는 좋습니다.</dd>
+
+            <dt>bbb</dt>
+            <dd>bbb는 그저 그래요.</dd>
+
+            <dt>ccc</dt>
+            <dd>ccc는 나빠요.</dd>
+        </dl>
+
+        <hr>
+        
+        <!-- 2. 하이퍼링크 anchor 요소 (인라인 요소 - 공간이 있다면 옆으로 배치)-->
+        <!-- 1) 절대경로 -->
+        <a href="https://www.naver.com">네이버</a>
+        <br>
+        <a href="https://www.google.com" target="_blank">구글</a>
+        <br>
+        <!-- 2) 상대경로 지정으로 파일 링크 가능 -->
+        <a href="./01_ex.html" target="_self">01실습 웹문서 열기</a> 
+        <br>
+        <!-- 3) 현재 html 문서안에서 특정 위치로 이동 [id속성 사용]  -->
+        <a href="#help">도움말 위치로 이동</a>
+        <hr>
+        <h3 id="help">도움말</h3>
+
+        <!-- 줄바꾸기 위해서 매번 br태그 사용하기 보단..(간격도 없음..) 단락요소로 줄바꾸는 것이 보기 좋아요-->
+        <p><a href="">aaa</a></p> 
+        <p><a href="">bbb</a></p>
+
+        <!-- 리스트의 요소로 링크들을 배치할 수 있음. -->
+        <ul>
+            <li><a href="">네이버</a></li>
+            <li><a href="">다음</a></li>
+            <li><a href="">구글</a></li>
+        </ul> 
+
+        <!-- href에 .html 문서 외에도 링크를 연결할 수 있음. -->
+        <p><a href="http://mbca2025aix.dothome.co.kr/download/moana.jpg">이미지 링크</a></p> 
+
+        <!-- 브라우저가 보여주는 못하는 문서를 링크하면?? 자동 다운로드 됨 -->
+        <p><a href="http://mbca2025aix.dothome.co.kr/download/Fonts.zip">압축문서 다운로드</a></p> 
+        <p><a href="http://mbca2025aix.dothome.co.kr/download/공모전.hwp">한글문서 다운로드</a></p>
+
+        <!-- 이메일 주소를 링크하면.. 이메일앱이 실행됨 -->
+        <p><a href="mailto:aaaa@gmail.com">aaaa@gmail.com</a></p> 
+
+        <hr>
+
+        <!-- 3. 이미지를 보여주는 요소 -->
+        <img src="http://mbca2025aix.dothome.co.kr/download/moana.jpg" alt="모아나 이미지">
+        <img src="./image/newyork.jpg" alt="상대경로 이미지" width="200" height="150" border="2">
+        <img src="./image/paris.jpg" alt="파일 이미지" width="50%">
+        <img src="aaa.jpg" alt="이미지 없을때 보여질 대체 글씨">
+
+        <!-- img + anchor -->
+        <a href="./image/sydney.jpg"><img src="./image/sydney.jpg" alt="시드니 이미지" width="200"></a>
+
+
+        <!-- 수행과제 -->
+        <!-- [슬라이드 자료 chapter2 32,33 커피전문점 홈페이지 ] .html 1개문서 -->
+        <!-- [슬라이드 자료 chapter2 34~37 썸네일 사진 링크 페이지] .html 3개문서 -->
+
+        <!-- Doit 책 교재 chapter1 ~ chapter4.2 (~p.91) [단, chapter 3-4 시멘틱태그는 제외(별도 수업예정) p.71~76] -->
+        <!-- chapter 1~4 까지 되새김 문제 풀기. [단, chapter3 중. 3,4,7번 제외 & chatper4 6,8,9,11번 제외] -->
+
+
+        
+    </body>
+</html>
