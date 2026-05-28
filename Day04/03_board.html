@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="uft-8">
+    <title>게시판</title>
+  </head>
+  <body>
+
+    <h2>게시판 글쓰기</h2>
+
+    <form action="./ccc.php" method="post" enctype="multipart/form-data">
+      <input type="text" placeholder="이름" name="name"> <br>
+      <input type="text" placeholder="글 제목" name="title"> <br> <br>
+      <textarea name="msg" placeholder="글 내용" cols="40" rows="5"></textarea> <br>
+      <label>첨부파일 : <input type="file" name="img1"></label>
+
+      <hr>
+      <input type="submit" value="작성 완료">
+      <input type="reset" vlaue="초기화">
+    </form>
+
+    <hr>
+
+    <h2>게시글 확인하기</h2>
+    <form action="./ddd.php" method="get">
+      <input type="submit" value="게시글 리스트 페이지로 이동">
+    </form>
+
+
+  </body>
+</html>
+
+<!-- 수행과제. -->
+<!-- 1. [chapter 5]. 11번, 12번 문제 Database 에 저장하기 위한 테이블(표) 만들기 -->
+<!-- 2. [chapter 5]. 11번, 12번 문제 Database 에 저장하기 -->
+<!-- 3. [chapter 5]. 11번, 12번 문제 Database 만들고 데이터 불러와서 보여주기 -->

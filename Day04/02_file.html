@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="uft-8">
+    <title>file upload</title>
+  </head>
+  <body>
+    
+    <h2>파일 업로드 페이지</h2>
+
+    <!-- 파일을 전송할 때는 key=value 방식이 아니라 다른 방식으로 보내야함. 그래서.. -->
+    <form action="./bbb.php" method="post" enctype="multipart/form-data">
+      <!-- 파일을 선택 할 수 있는 요소 -->
+      <input type="file" name="img1">
+      <input type="submit" value="파일 전송">
+    </form>
+      
+  </body>
+</html>
