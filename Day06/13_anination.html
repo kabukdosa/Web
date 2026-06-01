@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>animation test</title>
+
+    <style>
+      #aa{
+      background-color: green;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      position: absolute;
+
+      /* 애니메이션 적용 */
+      animation-name: myanim;
+
+      animation-name: bounce;
+      animation-duration: 3s;
+      animation-iteration-count: 5;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+      }
+
+      /* 애니메이션 장면들 만들기 */
+      @keyframes myanim
+      {
+        0%{ left: 0px; top: 0px;}
+        25%{ left: 100px; top: 50px;}
+        50%{ left: 200px; top: 0px;}
+        75%{ left: 100px; top: 100px;}
+        100%{ left: 0px; top: 0px;}
+      }
+
+      @keyframes bounce {
+        0%, 100%{
+          bottom: 0px; left: 0px;
+          animation-timing-function: ease-out;
+        }
+
+        50%{
+          bottom: 200px;
+          animation-timing-function: ease-in;
+        }
+      }
+
+      </style>
+
+  </head>
+  <body>
+    <div id="aa"></div>
+  </body>
+</html>
+
+
+<!-- chapter 8~9 & chapter 14 -->
+<!-- 수행과제 -->
+<!-- 1. 3개 챕터 읽고.. 예제 모두 따라하기 -->
+<!-- 2. 챕터마다 되새김 문제 풀기 -->

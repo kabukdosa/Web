@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>overflow</title>
+
+    <style>
+      .aaa p{
+        background-color: lightgreen;
+        width: 200px;
+        height: 50px;
+      }
+
+      .aaa{
+        border: 1px solid black;
+        width: 300px;
+        height: 100px;
+
+        overflow: visible; /*default*/
+        overflow: hidden;
+        overflow: scroll;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    
+
+    <div class="aaa">
+      <p>block #1</p>
+      <p>block #2</p>
+      <p>block #3</p>
+      <p>block #4</p>
+      <p>block #5</p>
+
+    </div>
+  </body>
+</html>

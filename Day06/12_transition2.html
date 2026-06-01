@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>전환 효과</title>
+
+    <style>
+      div.aa img{
+        background-color: red;
+        width: 200px;
+        height: 100px;
+
+        transition: width 3s, height 3s, background 3s, transform 3s;
+      }
+
+      div.aa img:hover{
+        width: 300px;
+        height: 150px;
+        background-color: blue;
+
+        transform: rotate(1.5rad); /*리다안 단위*/
+        transform: rotate(30deg) scale(1.2, 1.2) translate(80px, 0px); /*다중 변환.. 띄어쓰기로 구분*/
+
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="aa">
+      <img src="./image/pome.png" alt="pome">
+      <img src="./image/poodle.png" alt="poodle">
+    </div>
+
+  </body>
+</html>

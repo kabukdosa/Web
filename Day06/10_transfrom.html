@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>변환 속성</title>
+
+    <style>
+      div{
+        width: 50px;
+        height: 50px;
+        background-color: yellow;
+        border: 1px solid black;
+        text-align: center;
+      }
+
+      #b2{
+        background-color: blue;
+        transform: translate(100px, 0px);
+      }
+      #b3{
+        background-color: red;
+        transform: scale(1.2, 1.5);
+      }
+      #b4{
+        background-color: green;
+        transform: rotate(30deg); /*각도단위: deg, rad*/
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <div id="b1">BOX1</div>
+    <div id="b2">BOX2</div>
+    <div id="b3">BOX3</div>
+    <div id="b4">BOX4</div>
+
+  </body>
+</html>
