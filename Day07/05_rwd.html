@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 웹 디자인</title>
+  
+  <style>
+    *{padding: 0px; margin: 0px;}
+
+    #wrap{
+      width: 90%;
+      margin: 0px auto;
+      border: 4px solid black;
+      font-size: 0px;
+    }
+
+    #wrap div {
+      display: inline-block;
+      height: 100px;
+      font-size: 16px;
+    }
+
+    #wrap div:first-child{ background-color: aqua;}
+    #wrap div:nth-child(2){ background-color: lightgreen;}
+    #wrap div:nth-child(3){ background-color: orange;}
+    #wrap div:nth-child(4){ background-color: indigo;}
+    #wrap div:last-child{ background-color: yellow;}
+
+    /* 5개의 영역을 브라우저의 너비에 다리 반응형으로 배치하기 */
+    /* 작업은 모바일 우선으로.. 작은사이즈 부터 작성하는 것이 일반적임 */
+    /* (1) 모바일 환경일 때.. 최소너비 320px 이상 */
+    @media all and (min-width:320px){
+      #wrap div{ width: 100%; } /*한 줄에 한 영역씩...*/
+    }
+    
+    /* (2) 태블릿 환경일 때.. 600px 이상일 때 */
+    @media all and (min-width:600px){
+      #wrap div {width: 50%;}
+      #wrap div:last-child{width: 100%;}
+    }
+
+    /* (3) 데스크탑 환경일 때..800px 이상 */
+    @media all and (min-width:800px){
+      #wrap div{width: 20%;}
+      #wrap div:last-child{width: 20%;}
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div id="wrap">
+    <div>aa</div>
+    <div>bb</div>
+    <div>cc</div>
+    <div>dd</div>
+    <div>ee</div>
+  </div>
+  
+</body>
+</html>

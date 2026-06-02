@@ -7,7 +7,10 @@
     body {  
       background-image:url('images/bg2.png');  /* 문서 전체 배경 이미지 */ 
       /* Do it! 문서 전체 배경 이미지 오른쪽 상단에 고정하기 */
-
+      background-repeat: no-repeat;            /* 배경 이미지 반복 안 함 */
+      background-position: right top;          /* 배경 이미지 오른쪽 상단 위치 */
+      background-attachment: fixed;            /* 배경 이미지 고정 */
+      
     }
     div {
       width:400px;
@@ -21,7 +24,9 @@
       background-position:right top;  /* 배경 이미지를 오른쪽 상단에 위치시킴 */
     }
     /* Do it! #bg1 ~ #bg3 스타일을 사용해 배경 이미지 범위 지정하기 */
-
+    #bg1 { background-origin: padding-box;} /* 패딩까지 배경 이미지 표시 */
+    #bg2 { background-origin: border-box;}  /* 테두리까지 배경 이미지 표시 */
+    #bg3 { background-origin: content-box;} /* 내용 영역에서만 배경 이미지 표시 */
   </style>
 </head>
 <body>

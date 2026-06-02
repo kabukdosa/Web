@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>viewport</title>
+    <meta charset="UTF-8">
+
+    <!-- 뷰포트 : 웹 브라우저가 화면을 그려내는 가상의 영역 -->
+    <!-- 데스크탑 브라우저는 창의 크기에 따라 너비가 맞추어 변경됨 -->
+    <!-- 모바일 브라우저는 디바이스의 크기와 상관없이 무조건 980px로 너비를 인식함. 그렇기에 css로 적용한 너비가 다르게 보여짐.(작게 보임) -->
+    <!-- 그래서 모바일 UI를 제작할 때는 반드시 viewport를 설정해 줘야 함 -->
+    <!-- <meta name="viewport" content="width=400, inital-scale=1.0"> -->
+    <!-- <meta name="viewport" content="width=600, inital-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+  </head>
+  <body>
+    <h2>View Port Test</h2>
+    <p>This is viewport test page.</p>
+
+    <img src="../Day06/image/computer.png" alt="computer image" style="width: 200px; border: 1px dotted red;">
+  </body>
+</html>

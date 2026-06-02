@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>semantic tag</title>
+  </head>
+  <style>
+    #wrapper{
+      width: 680px;
+      border: 1px solid black;
+      margin-left: auto; margin-right: auto;
+    }
+    
+    header{
+      background-color: antiquewhite;
+      width: 100%;
+      padding: 3em;
+      box-sizing: border-box;
+    }
+    nav{
+      background-color: yellow;
+      width: 100%;
+      padding: 1em;
+      box-sizing: border-box;
+    }
+    main{
+      background-color: azure;
+      padding: 1em;
+      display: table-cell;
+      box-sizing: border-box;
+    }
+    aside{
+      background-color: aquamarine;
+      padding: 1em;
+      display: table-cell;
+      box-sizing: border-box;
+    }
+    footer{
+      background-color: black;
+      color: white;
+      padding: 2em;
+      text-align: center;
+    }
+
+    nav ul { list-style: none;}
+    nav ul li { display: inline-block;}
+    nav ul li a {text-decoration: none; color: blue;}
+    nav ul li a:hover{text-decoration: underline; color: red;}
+
+    aside img {
+      width: 150px;
+    }
+
+
+  </style>
+  <body>
+    
+  <div id="wrapper">
+    <header>
+      <h1>MY HOME PAGE</h1>
+      <p>This is semantic tag test page.</p>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="">뉴스</a></li>
+        <li><a href="">스포츠</a></li>
+        <li><a href="">연예</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <article>
+          <h3>HTML5</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quod id consequuntur dolorum fuga dolores, laborum corporis modi sapiente laboriosam excepturi unde vero non animi ad amet! Libero, itaque sequi?</p>
+        </article>
+        <article>
+          <h3>CSS3</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis veritatis consectetur, tempore esse eius unde provident dicta ut tenetur hic, impedit minima, sed est ea labore nam. Delectus, inventore neque?</p>
+        </article>
+      </section>
+    </main>
+    <aside>
+      <input type="text" placeholder="검색어 입력하세요">
+
+      <figure>
+        <img src="../Day06/image/paris.jpg" alt="paris">
+        <figcaption>파리 이미지</figcaption>
+      </figure>
+    </aside>
+    <footer>
+      <h5>COPYRIGHT &copy; MBCA</h5>
+    </footer>
+  </div>
+
+
+  </body>
+</html>

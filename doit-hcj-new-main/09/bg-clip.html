@@ -5,15 +5,18 @@
   <title>상품 소개 페이지</title>
   <style>
     .desc {
-      border:5px dotted #222;
       background-color:#ffd9a0;
+      border:5px dotted #222;
       width:350px;
       padding:20px;
       margin-right:20px;
       float:left;
     }
     /* Do it! 배경색 적용 범위 지정하기 */
-
+    #clip-border { background-clip: border-box; }   /*테두리까지 배경 지정*/
+    #clip-padding { background-clip: padding-box; } /*패딩 범위까지 배경 지정*/
+    #clip-content { background-clip: content-box;} /*콘텐츠에만 배경 지정*/
+  }
   </style>
 </head>
 <body>
