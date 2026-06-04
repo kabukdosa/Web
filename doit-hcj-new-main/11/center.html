@@ -12,7 +12,11 @@
     }
     body {      
       background:url('images/bg5.jpg') no-repeat left top fixed;
-      background-size:cover;      
+      background-size:cover;
+      display: flex;           /* 플렉스 컨테이너 지정 */
+      justify-content: center; /* 주축 정렬 방법 - 중앙 정렬 */
+      align-items: center;     /* 교차축 정렬 방법 - 중앙 정렬 */
+      min-height: 100vh;       /* 브라우저 높이의 100% */
     }
     button {
       background-color:#ccc;

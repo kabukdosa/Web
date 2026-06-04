@@ -8,7 +8,7 @@
     .container {
       width:700px;
       /* Do it! 플렉스 컨테이너 지정 */
-      
+      display: flex; /*플렉스 컨테이너 지정*/
       background-color:#eee;
       border:1px solid #222;
       margin-bottom:30px;
@@ -30,7 +30,10 @@
     }
     
     /* Do it! 주축의 방향을 지정하는 #opt1 ~ #opt4 스타일 만들기 */
-  
+    #opt1 { flex-direction: row; }           /* 왼쪽에서 오른쪽으로 */
+    #opt2 { flex-direction: row-reverse; }   /* 오른쪽에서 왼쪽으로 */
+    #opt3 { flex-direction: column; }        /* 위에서 아래로 */
+    #opt4 { flex-direction: column-reverse;} /* 아래에서 위로*/
   </style>
 </head>
 <body>

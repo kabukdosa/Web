@@ -22,7 +22,11 @@
     }
 
     /* Do it! object-fit 속성을 사용하여 이미지 크기 조절하기 */
-
+    .fill { object-fit: fill;}             /* 이미지 비율 유지 안 함. 요소에 꽉 차게 채움 */
+    .contain { object-fit: contain;}       /* 이미지 비율 유지. 요소 크기에 맞춤 */
+    .cover { object-fit: cover;}           /* 이미지 비율 유지. 요소에 꽉 차게 채움 */
+    .none { object-fit: none;}             /* 이미지 원래 크기 유지 */
+    .scale-down { object-fit: scale-down;} /* none과 contain 중 작은 이미지로 */
   </style>
 </head>
 <body>

@@ -11,10 +11,16 @@
 		}
 
 		/* Do it! 노란색에서 흰색을 거쳐 주황색으로 바뀌는 타원형 그러데이션 .grad1 스타일 만들기 */
-
+		.grad1 {
+			background: orange; /*CSS3를 지원하지 않는 웹 브라우저용*/
+			background: radial-gradient(yellow, white, orange); /*색상 중지점 지점*/
+		}
 
 		/* Do it! 노란색에서 시작, 10% 위치의 흰색, 60% 위치의 주황색으로 바뀌는 타원형 그러데이션 .grad2 스타일 만들기 */
-	
+		.grad2{
+			background: orange;
+			background: radial-gradient(yellow, white 10%, orange 60%); /*색상 중지점의 위치까지 지정*/
+		}
 
 	</style>
 </head>

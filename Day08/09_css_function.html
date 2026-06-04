@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css function</title>
+</head>
+<body>
+  
+  <!-- 1. css 변수를 사용하는 기능 : var() -->
+  <h1>Hello</h1>
+  <p>This is css.</p>
+  <span>nic to meet you.</span>
+  <style>
+    /* 요소의 색상을 지정할 때.. 특성 색을 변수에 저장하고 사용하면 유지보수가 용이함 */
+    /* css 변수가 적용될 범위 */
+    :root{ /*문서의 최상위 요소 선택 <html> 자손 요소들은 모두 이 변수 사용가능*/
+      /* css 변수 만들기.. 하이픈(-) 2개 */
+      --aa: brown;
+      --bb: blue;
+      /* 변수 이름은 가급적 그 의미를 알 수 있는 명칭을 선택 */
+      --main-bg-color: yellow;
+      --main-text-color: black;
+      --secondary-text-color: gray;
+      --error-text-color: red;
+
+    }
+    body{background-color: var(--main-bg-color);}
+    h1 {color: var(--aa);}
+    p{color: var(--bb);}
+    span{color: var(--bb);}
+  </style>
+
+  <hr>
+
+  <!-- 2. clac() : 수치값을 적용 할 때 사칙연산 계산이 필요하다면? -->
+  <div>Hello</div>
+  <style>
+    div{
+      border: 2px solid blue;
+      padding: 0px 3rem;
+      width: 100% - 1rem; /*적용 안됨*/
+      width: calc(100% - 10rem); /*연산자와 숫자 사이에 띄어쓰기가 있어야 함.*/
+    }
+  </style>
+
+  <hr>
+
+  <!-- 3. max(), min() : 여러값 중에서 최대 또는 최소값이 적용되는 기능함수 -->
+  <h4>THIS IS HEADING</h4>
+  <style>
+    h4{
+      border: 3px solid black;
+      width: min(100%, 600px); /*둘 중에 작은 값이 적용*/
+    }
+  </style>
+
+  <hr>
+
+  <!-- 4. filter 속성 -->
+  <div>
+    <p>
+      <img src="../Day01/image/newyork.jpg" alt="newyork">
+    </p>
+    <p>
+      <img style="filter: blur(3px);" src="../Day01/image/newyork.jpg" alt="newyork">
+      <img style="filter: brightness(2);" src="../Day01/image/newyork.jpg" alt="newyork">
+      <img style="filter: contrast(200%);" src="../Day01/image/newyork.jpg" alt="newyork">
+      <img style="filter: drop-shadow(8px 8px 5px black);" src="../Day01/image/newyork.jpg" alt="newyork">
+      <img style="filter: grayscale(100%);" src="../Day01/image/newyork.jpg" alt="newyork">
+      <img style="filter: invert(100%);" src="../Day01/image/newyork.jpg" alt="newyork">
+      <img style="filter: sepia(100%);" src="../Day01/image/newyork.jpg" alt="newyork">
+      <img style="filter: opacity(50%);;" src="../Day01/image/newyork.jpg" alt="newyork">
+      <img style="filter: hue-rotate(90deg);" src="../Day01/image/newyork.jpg" alt="newyork">
+      <img style="filter: saturate(200%);" src="../Day01/image/newyork.jpg" alt="newyork">
+    </p>
+  </div>
+  <style>
+    img{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 1rem;
+    }
+
+
+  </style>
+</body>
+</html>
+
+<!-- 수행과제 -->
+<!-- 11, 12, 13 챕터 읽고 예제 따라 하기  -->
+<!-- 1. 되새김 문제 풀기  -->
+<!-- 2. wwit design 사이트의 모바일 UI를 flex+grid 스타일로 만들어보기 -->

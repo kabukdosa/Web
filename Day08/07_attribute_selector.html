@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>attribute selector</title>
+</head>
+<body>
+  <ul>
+    <li><a href="https://www.naver.com" target="_blank">naver</a></li>
+    <li><a href="https://google.com" target="_self">google</a></li>
+    <li><a href="https://www.daum.net" target="_self">daum</a></li>
+  </ul>
+  <style>
+    a[target='_blank']{
+      background-image: url(./icon/tab.png);
+      background-position: right;
+      background-size: 14px;
+      background-repeat: no-repeat;
+      padding-right: 20px;
+    }
+  </style>
+
+  <hr>
+  <!-- input 요소 중 type이 radio 중 선택된 요소 찾기 -->
+  <input type="radio" name="nation" value="korea" id="rb1">
+  <label for="rb1">대한민국</label>
+  <input type="radio" name="nation" value="japan" id="rb2">
+  <label for="rb2">일본</label>
+  <input type="radio" name="nation" value="china" id="rb3">
+  <label for="rb3">중국</label>
+
+  <style>
+    /* 라디오버튼 중에서 체크된 녀석의 바로 다음 label 요소 */
+    input[type='radio']:checked+label{
+      font-weight: bold;
+      color: dodgerblue;
+    }
+  </style>
+  
+  <hr>
+
+  <!-- 속성의 값이 특성 글씨로 시작되는 요소 선택 -->
+  <a href=""title="네이버로 이동">네이버</a>
+  <a href=""title="검색도구 구글로 이동">구글</a>
+  <a href=""title="다음으로 이동">다음</a>
+  <style>
+    a[title^='네이버']{
+      color: green;
+    }
+    a[title^='구글']{
+      color: blue;
+    }
+    /* 글씨의 일부가 포함되어 있을 때 선택 */
+    a[title*='구글']{
+      color: red;
+    }
+  </style>
+
+  <hr>
+  <!-- 특정 글자로 끝나면... -->
+  <a href="./aaa.hwp">한글파일 다운로드</a>
+  <a href="./aaa.xlsx">엑셀파일 다운로드</a>
+  <a href="./aaa.zip">압축파일 다운로드</a>
+  <style>
+    a[href$='xlsx']{
+      font-weight: bold;
+      color: tomato;
+    }
+  </style>
+
+  <!-- 속성값에 특정 단어가 포함되었는가? ~= -->
+  <p class="aa bb cc">Hello</p>
+  <p class="aa cc">nice</p>
+  <p class="aa bb">good</p>
+  <style>
+    .aa{color: blue;}
+    .bb{font-size: bold;}
+    .cc{font-style: italic;}
+
+    p[class='bb']{font-size: 2rem;} /*대상 없음*/
+    p[class~='bb']{font-size: 2rem;}
+
+    p[class~='b']{background-color: bisque;} /*단어 찾기 - X*/
+    p[class*='b']{border: solid;} /*글자찾기 - OK*/
+  </style>
+
+
+
+</body>
+</html>

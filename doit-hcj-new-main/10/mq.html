@@ -19,7 +19,22 @@
       background: url(images/bg-light.jpg) no-repeat fixed;  
       background-size: cover;
     }
-
+    /* 768px ~ 1023px이면 images/bg-dark.jpg 사용 */
+    @media screen and (min-width: 768px) and (max-width: 1023px){
+      body {
+        background: url(./images/bg-dark.jpg) no-repeat fixed;
+        background-size: cover;
+        color: #fff;
+      }
+    }
+    /* 768px 미만이면 images/bg-small.jpg 사용 */
+    @media screen and (max-width: 767px){
+      body{ background: url(./images/bg-small.jpg) no-repeat fixed;
+        background-size: cover;
+        color: #fff;
+      }
+    }
+    
   </style>
 </head>
 <body>
