@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>element control</title>
+
+  <!-- 내부 스크립트 작성 -->
+  <script>
+    //1) 이미지를 변경하는 코드가 작성된 영역
+    function changeImage(){
+      // img 요소를 찾아와서 속성 값 src를 변경 - css가 아니기에 선택자를 사용할 수 없음.
+      // body 영역 안에 있는 요소를 찾는 기능이 document에 존재함.
+      var img= document.getElementById('aa');
+      img.src='./image/paris.jpg';
+      img.alt='paris image';
+    }
+
+    //2) HTML 요소의 특정 스타일을 변경하는 기능함수
+    function changeColor(){
+      // h2 요소를 찾아서 배경색(style) 변경
+      // 태그명으로 요소 찾아보기
+      var h2s= document.getElementsByTagName('h2'); //태그명 찾기는 여러개일수도 있어서 무조건 배열로 찾아줌.
+      var h2= h2s[0]; //요소가 배치된 순서대로 0번부터...
+
+      h2.style.backgroundColor= 'yellow';
+      h2.style.color='red';
+      h2.style.border= '2px solid blue';
+    }
+
+
+    //3) input 요소의 값 제어
+    function cal(){
+      var in1= document.getElementsByName('in1')[0];
+      var in2= document.getElementsByName('in2')[0];
+
+      // input 요소에 써 있는 값을 얻어오기
+      var num1= in1.value;
+      var num2= in2.value;
+
+      // 두 수의 덧셈
+      var result= num1 + num2; //모든 사용자의 입력은 문자열.. '50'+'30'
+      var result= parseInt(num1) + parseInt(num2)
+
+      var in3= document.getElementsByName('in3')[0];
+      in3.value= result;
+    }
+  </script>
+</head>
+<body>
+
+  <!-- 보통 JS의 함수는 버튼 클릭 같은 이벤트에 따라 처리할 작업을 써 놓은 코드 영역임. -->
+
+  <!-- 1) 이미지 변경 -->
+  <img src="./image/newyork.jpg" alt="newyork" width="200px" id="aa">
+  <button onclick="changeImage()">change image</button>
+  <hr>
+
+  <!-- 2) 특정 요소의 스타일 변경 -->
+  <h2>This is Heading element</h2>
+  <button onclick="changeColor()">change background color of h2</button>
+  <hr>
+
+  <!-- 3) input 요소의 값 제어 -->
+  <input type="text" name="in1"> <br>
+  <input type="text" name="in2"> <br>
+  <button onclick="cal()">덧셈 계산</button><br>
+  <input type="text" name="in3" placeholder="결과"> <br>
+
+  
+</body>
+</html>
