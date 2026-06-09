@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array object</title>
+  
+  <script>
+    // 5. Array
+
+    // 이미 배열수업에 배열 다루는 것은 배웠음.,
+    var aaa= new Array(10, 20 ,30);
+    document.write( typeof(aaa) + '<br>') // object
+
+    // 배열 객체가 가지고 있는 유용한 기능(function-함수-method)
+    // 1) 배열 요소의 값들을, 구분자로 하여 하나의 문자열로 만들어주는 기능
+    document.write( aaa.toString() + "<br>");
+    // .toString()을 직접 쓰는 경우는 별로 없음. why? 배열 참조변수를 출력하면 자동 toString() 해줌
+    document.write( aaa+ '<br>');
+
+    // 2) 다른 배열을 이어 붙이 새로운 배열을 만들어주는 기능
+    var bbb=[4,5,6]; 
+    var ccc= aaa.concat(bbb);
+    document.write(ccc +'<br>');
+    // 원본 aaa는 불변..
+    document.write(aaa+ '<br>');
+
+    // 파이썬 리스트처럼 + 결합연산이 될까? -- 안됨!!! --- 각 배열의 문자열로 변환 후 문자열 결합을 해버림.
+    var ddd= aaa+bbb;
+    document.write( ddd + '<br>' );
+    document.write(typeof(ddd) + '<br>'); 
+
+    document.write('<hr>');
+
+    // 3) indexOf - 특정 값이 몇 번 위치에 있는지? 인덱스 번호
+    document.write( aaa.indexOf(30) + '<br>' );
+    document.write( aaa.indexOf(40) + '<br>' ); // 없으면 -1
+    document.write( aaa.indexOf(10, 1) + '<br>' ); // 1번방 이후부터 10을 찾기
+
+    // 4) push, pop [stack 구조]
+    var stack= [1,2,3,4,5,6,7];
+    stack.push(10); // 마지막에 10이 추가됨
+    document.write(stack +'<br>')
+
+    // 마지막 요소를 뺴오기..[실제 배열에 변화가 생김]
+    var e= stack.pop()
+    document.write(e + '<br>');
+    document.write(stack +'<br>');
+
+    // 5) push, shift [queue 구조]
+    var queue= [1,2,3,4,5];
+    queue.push(10);
+    document.write(queue +'<br>')
+
+    var e= queue.shift(); // 첫번째 요소 빼오기..
+    document.write(e + '<br>');
+    document.write(queue + '<br>');
+    document.write('<hr>')
+
+    // 5) revers - 배열의 저장 순서를 뒤집기 (원본이 변경됨)
+    var aaa= [10, 20, 30, 40, 50];
+    aaa.reverse();
+    document.write(aaa + '<hr>');
+
+    // 6 slice - 배열의 일부분을 잘라서 새로운 배열로 리턴..(원본 불변)
+    var aaa= [10, 20, 30, 40, 50, 60, 70, 80, 90];
+    var bbb= aaa.slice(3); // 3번 위치부터 잘라서 새로운 배열로 리턴
+    document.write(bbb+ '<br>');
+
+    var ccc= aaa.slice(3, 6) // 3번 ~ 6번 전까지.. 잘라서 새로운 배열 리턴
+    document.write(ccc +'<hr>');
+
+    //  7) join - 배열의 요소를 특정문자를 구분자로 하여 하나의 문자열로 리턴(string의 split의 정반대 기능)
+    var aaa=['sam', 'robin', 'hong'];
+    var bbb= aaa.join("&"); // "sam&robin&hong"
+    document.write(bbb + '<hr>');
+
+    // 8) sort - 정렬(원본 변경됨)
+    var aaa = [3,5,4,8,9,1,6,7];
+    aaa.sort();
+    document.write(aaa + '<br>');
+
+    // 두 자리 이상의 숫자를 정렬해보면??
+    var aaa = [3, 1, 15, 48, 754, 1234, 54 ,90];
+    aaa.sort(); // 숫자를 자리수끼리.. 비교하면서.. 순위를 정함..
+    document.write(aaa +'<br>');
+
+    // 그래서 정렬을 하는 기준을 결정하는 함수를 이용[정렬기준함수] 라고 부름..
+    aaa.sort(function(a, b){ // 오름차순
+      return a-b;
+    });
+    document.write(aaa+'<br>');
+
+    aaa.sort(function(a, b){ // 내림차순
+      return b-a;
+    });
+    document.write(aaa+'<br>');
+
+    document.write('<hr>');
+
+    // 9) filter -- 필터지정함수를 활용(필터의 기준을 정하는 것임)
+    var scores= [90,75,68,42,78,84,95,100,32,87];
+    // 80점 이상의 점수만 뽑아서.. 새로운 배열로 만들어 내기...(필터링)
+    var good_scores= scores.filter( function(e,index,array){
+      // 필터 조건.. 이 조건이 true인 요소들만 새 배열에 포함됨.
+      //return e>=80;
+      return e>=80 && index>3; // 80점 이상이면서..요소 위치번호가 3번보다 큰 것들.
+    });
+    document.write(good_scores + "<br>"); 
+    document.write('<hr>');
+
+    // ECMAScript5 버전에서 새로 추가된 기능들...
+    var aaa= [10, 20, 30, 40, 50];
+
+    // 10) 각각의 배열 요소들에 접근하는 반복기능을 제공
+    aaa.forEach( function(e,index,array){
+      document.write(e + " : " + index + " - " + array.length + '<br>');
+    });
+    document.write('<hr>');
+
+    // 11) forEach처럼 각 요소개수만큼 전달한 함수를 실행해주며.. 리턴을 통해 새로운 배열을 만들어 줌.
+    // aaa 배열의 요소들 마다 x2 를 한 새로운 배열을 만들기
+    var bbb= aaa.map( function(e, idx, array){
+      return e*2;
+    } );
+    document.write(bbb + '<br>');
+    //.map()은 원본 배열을 가지고 조작하여 새로운 배열을 만들 때 매우 유용. 많이 사용함.
+
+    // .map()에 전달한 함수의 파라미터 개수는 최대 3개이며..순서가 정해져 있음.
+    // 변수명을 바꿔도 되며.. 필요한 것만 사용해도 됨.
+    var bbb= aaa.map( function(value){
+      return value*value;
+    } );
+    document.write(bbb + '<br>');
+      </script>
+</head>
+<body>
+  
+</body>
+</html>
