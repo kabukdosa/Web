@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>drag & drop</title>
+
+  <style>
+    #cart{
+      width: 400px; height: 150px; padding: 10px; border: 1px dotted red;
+    }
+  </style>
+
+  <script>
+    // cart 위로 올라갔는지 여부
+    var isOver= false;
+
+    function endDrag(){
+      if(isOver){
+        // 드래그가 종료된 요소를 id를 기반으로 찾기
+        var e= document.getElementById(window.event.target.id);
+        // cart 아이디를 가진 div요소 안에 드래그한 요소를 자식으로 추가
+        document.getElementById('cart').appendChild(e);
+      }
+    }
+
+    function overDrag(){
+      // 기본적으로 다른 요소가 내 위에 놓여지지 않도록 아이콘이 표시됨.
+      // 이게 싫다면.. 이 기본설정을 막아야(방지해야) 함.
+      window.event.preventDefault();
+
+      // 요소가 올라왔다고...변수에 저장
+      isOver=true;
+    }
+
+    function leaveDrag(){
+      isOver= false;
+    }
+  </script>
+</head>
+<body>
+  <div id="cart" ondragover="overDrag()" ondragleave="leaveDrag()"></div>
+
+  <img src="./image/ms18.png" alt="ms18" width="150" height="150" id="img1" ondragend="endDrag()">
+  <img src="./image/ms19.png" alt="ms19" width="150" height="150" id="img2" ondragend="endDrag()">
+</body>
+</html>

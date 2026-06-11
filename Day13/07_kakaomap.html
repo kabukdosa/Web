@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>kakao map api</title>
+
+  <!-- 모든 지도 API는 실제 서버에 업로드 되어야 만 실행됨. 즉, location이 http~로 시작 -->
+  
+  <!-- 카카오 지도 API(라이브러리, 모듈) 사용하기 -->
+  <!-- 개발하기 전에 [카카오 개발자 사이트 developers.kakao.com]의 튜토리얼 문서를 확인 후 제작 -->
+  <!-- 개발가이드에 따라.. 앱 생성 및 api key 발급 받기. 웹 서버 도메인 등록 -->
+
+  <!-- 실제 지도를 불러오는 작업을 수행하는 카카오의 지도 api 라이브러리 적용(외부 스크립트) : 발급받은 자바스크립트 키를 등록 -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=44a8662baae34b0358743c91cce1d9ac"></script>
+
+  <!-- 지도를 띄우는 코드 작성(외부 스크립트) defer: 지연 -->
+  <script src="./kakaomap.js" defer></script>
+</head>
+<body>
+  
+  <!-- 지도가 그려질 영역 요소 생성[사이즈 지정이 필수!!!] -->
+  <div id="map" style="width: 500px; height: 400px;"></div>
+
+</body>
+</html>
+
+
+<!-- 수행과제. -->
+<!-- 1. 마커 이미지를 사진 이미지로 변경 -->
+<!-- 2. 여러개의 마커 표시 -->
+<!-- 3. FileReader로 다중 선택 이미지 미리보기 구현 -->
+
+<!-- [추가]. 현재위치 geolocation 을 통해 얻은 위도, 경도로 지도의 초기 위치를 보여주기 -->

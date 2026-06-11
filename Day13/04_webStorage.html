@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>web storage</title>
+</head>
+<body>
+
+  <h3 id="aa"></h3>
+  <hr>
+  <h3 id="bb"></h3>
+
+  <script>
+    //웹 스토리지 : 웹문서가 데이터를 client의 컴퓨터에 저장할 수 있는 기법(일종의 쿠키(4KB)) -- 5MB 가능
+
+    //예) 페이지 방문 횟수 저장 및 표시
+
+    //웹 스토리지...2가지 저장소
+    //1. localStorage : 브라우저가 닫혀도 데이터를 저장하고 있음
+    if(! localStorage.cnt){ // cnt라는 식별자로 된 값이 없는가?
+      localStorage.cnt=0 // cnt 변수 선언과 초기화
+    }
+
+    // 기존 값에 1증가 [무조건 값은 문자열로 저장되어 있음.]
+    localStorage.cnt=parseInt(localStorage.cnt) + 1;
+
+    // 출력
+    document.getElementById('aa').innerHTML= localStorage.cnt + "번째 방문입니다."
+    
+    // 스토리지의 데이터 삭제하기..
+    //localStorage.clear();
+    // ------------------------------------------------------------------
+
+    //2. sessionStorage : 브라우저가 닫히면 데이터를 잃어버림. 단, 새로고침은..데이터를 유지.[새탭은..새창과 같아서..데이터유지 안됨]
+    if( !sessionStorage.cnt ){
+      sessionStorage.cnt=0;
+    }
+    sessionStorage.cnt=parseInt(sessionStorage.cnt) + 1;
+    document.getElementById('bb').innerHTML= sessionStorage.cnt + "번째 방문";
+    </script>
+  
+</body>
+</html>

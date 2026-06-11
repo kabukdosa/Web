@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>canvas element</canvas></canvas></title>
+</head>
+<body>
+
+  <canvas id="c1" width="300" height="400" style="border: 2px solid black;"></canvas>
+  <script>
+
+    var canvas= document.getElementById('c1');
+    // 캔버스에 그림을 그리기 위해.. 그림도구를 얻어오기
+    var context= canvas.getContext('2d');
+
+    // 글씨 색상 변경하기
+    context.fillStyle='red';
+    context.font="20px serif"; 
+
+    // 그림도구를 이용하여 캔버스에 글씨를 그리기
+    context.fillText('Hello', 10, 40); // 글씨의 좌하단 좌표를 지정
+    context.fillText('Hello', 0, 0);
+    context.fillText('Hello', 0, 10);
+    context.fillText('Hello', 0, 400);
+
+    // 윤곽선 스타일
+    context.strokeStyle='green'
+    context.font= "30px serif"
+
+    // 윤곽선 글씨 그리기
+    context.strokeText('Hello', 100, 40);
+
+    // 사각형 도형 그리기
+    context.fillStyle='blue';
+    context.fillRect(10, 50, 100, 40); // 좌상단 10, 50 너비: 100, 높이: 40
+
+    // 윤곽선 사각형 그리기
+    context.strokeStyle='blue';
+    context.strokeRect(120, 50, 100, 40)
+
+    // 직선 그리기..
+    context.beginPath(); // 선의 경로작업 시작!
+    context.moveTo(10, 100); // 선의 시작위치로 붓을 이동
+    context.lineTo(100, 150); // 직선의 종료위치를 지정
+    context.lineTo(150, 120)
+    // 위 경로로 선 그리기
+    context.stroke();
+
+    // 슬라이드 자료에 사각형, 곡선, 원, 패턴, 그래디언트 등.. 다양한 방법이 소개되어 있음.
+
+    // 도화지 안에 이미지를 그리기
+    var img1= new Image();
+    img1.src="./image/ms19.png";
+    // 이미지 파일은 용량이 크리게.. 이미지 객체로 만들어지는데 시간이 걸림.
+    // 그래서 곧바로 그려내라고 하면.. 안 그려지는 경우가 많음.
+    //context.drawImage(img1);
+    // 그래서 일반적으로..이미지 객체의 파일 로딩 작업이 완료되면 함수를 만들어 이미지를 그려냄.
+    img1.onload=function(){
+      context.drawImage(img1, 10, 180); // 이미지의 좌상단 좌표 [원본사이즈]
+      context.drawImage(img1, 10, 100, 100, 100); // 좌상단 좌표, 너비, 높이
+      // 이미지의 일부분만 도려내서 그려 낼 수 있음.
+      context.drawImage(img1, 100, 100, 100, 100, 200, 180, 100, 100); // 앞 4개의 숫자[도려낸 위치, 사이즈], 뒤 4개 숫자[그려질 위치, 크기]
+    }
+
+    //하나의 canvas 안에 여러개의 이미지를 그려낼 수 있음.
+    var img2= new Image();
+    img2.src='./image/ms18.png';
+    img2.onload= function(){
+      context.drawImage(img2, 150, 0, 150, 150);
+    }
+
+
+  </script>
+  
+</body>
+</html>

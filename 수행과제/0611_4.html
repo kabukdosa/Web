@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>현재위치 geolocation 을 통해 얻은 위도, 경도로 지도의 초기 위치를 보여주기</title>
+
+  <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=44a8662baae34b0358743c91cce1d9ac"></script>
+
+  <style>
+  #map{
+    width: 500px;
+    height: 500px;
+  }
+</style>
+</head>
+<body>
+  <button onclick="showMyLocation()">현재 위치 보기</button>
+
+  <div id="map"></div>
+
+  <script>
+    function showMyLocation(){
+      navigator.geolocation.getCurrentPosition(function(position){
+        var lat = position.coords.latitude;
+        var lng = position.coords.longitude;
+    
+        // 지도 영역
+        var container = document.getElementById('map');
+
+        // 현재 위치를 중심으로 설정
+        var options = {
+          center: new kakao.maps.LatLng(lat, lng),
+          level: 3
+        };
+
+        // 지도 생성
+        var map = new kakao.maps.Map(container, options);
+
+        // 현재 위치 마커
+        var marker = new kakao.maps.Marker({
+        position: new kakao.maps.LatLng(lat, lng)
+        });
+
+      marker.setMap(map);
+
+      }, function(error){
+        alert(error.message);
+      });
+    }
+  </script>
+
+  <button onclick="aaa()">my location</button>
+  <h3 id="hh">위도(latitude), 경도(longitude)</h3>
+  <hr>
+  <button onclick="bbb()">위치 자동 업데이트</button>
+  <button onclick="ccc()">자동 업데이트 종료</button>
+
+  <script>
+    function aaa(){
+      // 현재 내 위치정보를 얻어오는 시간이 걸리기에..
+      // 내 위치 탐색이 완료되면 실행될 콜백함수를 파라미터로 등록..
+      window.navigator.geolocation.getCurrentPosition( function(position){
+        // 파라미터로 전달된 position안에 위도, 경도 정보가 있음.
+        var lat= position.coords.latitude;
+        var lng= position.coords.longitude;
+        
+        document.getElementById('hh').innerHTML= lat +" , " + lng;                
+      }, function(error){
+        alert(error.code +'\n' + error.message);
+      } )
+    } 
+    var id;
+    function bbb(){
+      id= navigator.geolocation.watchPosition(function(position){
+        var lat= position.coords.latitude;
+        var lng= position.coords.longitude;
+        document.getElementById('hh').innerHTML= lat + '<br>' + lng;
+      })
+    }
+    
+    function ccc(){
+      navigator.geolocation.clearWatch(id);
+    }
+  </script>  
+</body>
+</html>

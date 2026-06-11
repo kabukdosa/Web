@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FileReader로 다중 선택 이미지 미리보기 구현</title>
+
+  <style>
+    #preview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    #preview img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+  <h2>이미지 여러 개 선택</h2>
+  <input type="file" id="imageInput" multiple accept="image/*">
+  <div id="preview"></div>
+
+  <script>
+  const imageInput = document.getElementById('imageInput');
+  const preview = document.getElementById('preview');
+
+  imageInput.addEventListener('change', function() {
+
+  // 기존 미리보기 제거
+  preview.innerHTML = '';
+
+  const files = this.files;
+
+  for(let i = 0; i < files.length; i++) {
+    const file = files[i];
+    // 이미지 파일인지 확인
+    if(!file.type.startsWith('image/')) {
+      continue;
+    }
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const img = document.createElement('img');
+      img.src = e.target.result;
+      preview.appendChild(img);
+    };
+    reader.readAsDataURL(file);
+  }
+});
+</script>
+
+</body>
+</html>
