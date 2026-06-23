@@ -1,0 +1,425 @@
+:root{
+  --primary-color:#3498db;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#f8f9fa;
+  font-family:'맑은 고딕',sans-serif;
+}
+
+#welcomeUser{
+  color:#555;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.top-bar{
+  background:#f5f5f5;
+  border-bottom:1px solid #ddd;
+  height:60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+}
+
+.main-logo{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+}
+
+.main-logo img{
+  height:100px;
+  width:auto;
+  display:block;
+}
+
+.top-menu{
+  font-size:14px;
+}
+
+.top-menu a{
+  text-decoration:none;
+  color:#555;
+  font-weight:bold;
+}
+
+.top-menu a:hover{
+  color:var(--primary-color);
+}
+
+.top-menu span{
+  margin:0 8px;
+  color:#aaa;
+}
+
+header{
+  background:linear-gradient(
+    135deg,
+    #2c3e50,
+    var(--primary-color)
+  );
+
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+}
+
+section{
+  max-width:1000px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.info-box,
+.lesson-box{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  margin-bottom:25px;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+
+.profile-image{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:#e9ecef;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:40px;
+  overflow:hidden;
+}
+
+.profile-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+
+.profile-photo-btn-wrap{
+  margin-top:10px;
+}
+
+.profile-photo-btn{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:8px;
+  background:var(--primary-color);
+  color:#fff;
+  font-size:13px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.info-box h2,
+.lesson-box h2{
+  margin-bottom:20px;
+  color:#2c3e50;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,
+td{
+  border-bottom:1px solid #eee;
+  padding:15px;
+  text-align:left;
+}
+
+.btn-wrap{
+  text-align:center;
+}
+
+button{
+  background:var(--primary-color);
+  color:white;
+  border:none;
+  padding:12px 25px;
+  border-radius:10px;
+  cursor:pointer;
+  margin:0 5px;
+}
+
+.edit-info-box{
+  display:none;
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  margin-bottom:25px;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.edit-info-box h2{
+  margin-bottom:20px;
+  color:#2c3e50;
+}
+
+#editInfoForm{
+  display:flex;
+  flex-direction:column;
+}
+
+#editInfoForm label{
+  margin-top:15px;
+  margin-bottom:8px;
+  font-weight:bold;
+}
+
+#editInfoForm input,
+#editInfoForm select{
+  width:100%;
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:14px;
+}
+
+#editInfoForm .radio-group{
+  display:flex;
+  gap:30px;
+  margin-bottom:15px;
+}
+
+#editInfoForm .radio-group label{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin:0;
+  font-weight:normal;
+}
+
+.edit-btn-wrap{
+  display:flex;
+  gap:10px;
+  justify-content:flex-end;
+  margin-top:25px;
+}
+
+.info-btn-wrap{
+  text-align:right;
+  margin-top:20px;
+}
+
+.edit-info-box{
+  display:none;
+}
+
+.password-wrap{
+  position:relative;
+}
+
+.password-wrap input{
+  width:100%;
+  padding-right:45px;
+}
+
+#editTogglePassword{
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  width:25px;
+  height:25px;
+  object-fit:contain;
+  opacity:.3;
+  cursor:pointer;
+}
+
+/* 마이페이지 하단 버튼 */
+.mypage-bottom-btns{
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  margin-top:30px;
+}
+
+.withdraw-btn,
+.logout-btn{
+  width:150px;
+  height:50px;
+  border:none;
+  border-radius:10px;
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  margin:0;
+  padding:0;
+}
+
+.withdraw-btn{
+  background:#e74c3c;
+}
+
+.logout-btn{
+  background:#555;
+}
+
+.withdraw-btn:hover{
+  background:#c0392b;
+}
+
+.logout-btn:hover{
+  background:#333;
+}
+
+.member-info-wrap{
+  display:flex;
+  gap:40px;
+  align-items:flex-start;
+}
+
+.profile-area{
+  width:130px;
+  flex-shrink:0;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.member-info-wrap table{
+  flex:1;
+}
+
+/* ==========================
+   마이페이지 모바일
+========================== */
+@media(max-width:768px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .top-bar{
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    height:auto;
+    padding:12px;
+  }
+
+  .main-logo img{
+    height:70px;
+    width:auto;
+  }
+
+  .top-menu{
+    width:100%;
+    text-align:center;
+    font-size:13px;
+    line-height:1.8;
+  }
+
+  header{
+    padding:55px 20px;
+  }
+
+  header h1{
+    font-size:28px;
+  }
+
+  header p{
+    font-size:15px;
+  }
+
+  section{
+    width:100%;
+    margin:25px auto;
+    padding:0 12px;
+  }
+
+  .info-box,
+  .lesson-box,
+  .edit-info-box{
+    padding:20px;
+    border-radius:16px;
+  }
+
+  .member-info-wrap{
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+  }
+
+  .profile-area{
+    width:100%;
+    align-items:center;
+  }
+
+  .profile-image{
+    width:110px;
+    height:110px;
+  }
+
+  .profile-photo-btn-wrap{
+    text-align:center;
+  }
+
+  .member-info-wrap table{
+    width:100%;
+  }
+
+  th,
+  td{
+    padding:12px 8px;
+    font-size:14px;
+  }
+
+  .info-btn-wrap{
+    text-align:center;
+  }
+
+  .info-btn-wrap button{
+    width:100%;
+  }
+
+  #editInfoForm input,
+  #editInfoForm select{
+    font-size:16px;
+  }
+
+  .edit-btn-wrap{
+    flex-direction:column;
+  }
+
+  .edit-btn-wrap button{
+    width:100%;
+  }
+
+  .lesson-box{
+    overflow-x:auto;
+  }
+
+  .lesson-box table{
+    min-width:520px;
+  }
+
+  .mypage-bottom-btns{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .withdraw-btn,
+  .logout-btn{
+    width:100%;
+  }
+}

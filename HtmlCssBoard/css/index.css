@@ -1,0 +1,54 @@
+/* 공통 스타일 import [마진, 패딩, 폰트사이즈, 리스트, 앵커 스타일 ... 등] */
+@import url('./common.css');
+
+/* 공통 스타일을 제외한 리스트 페이지만의 스타일링 */
+
+/* 1. 테이블 표시 영역 */
+.board_list {
+    width: 100%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+
+    /* 표안에 선은 td or th 들이 그려야 함. 만약 tr로 선을 그리려면.. */
+    border-collapse: collapse;
+}
+
+/* 테이블의 tr요소의 아래 경계선 그리기 */
+.board_list tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+/* 각 셀마다 스타일 */
+.board_list th, td{
+    padding: 1rem 0rem;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+/* 칸별 너비 지정 */
+.col_no{width: 10%;}
+.col_title{width:55%; text-align: left;}
+.col_writer{width:10%;}
+.col_date{width: 15%;}
+.col_hits{width:10%;}
+
+/* 2. 페이지 네이션 스타일링 */
+.board_pagination {
+    margin-top: 30px;
+    text-align: center;
+}
+/* anchor 요소들을 버튼 모양으로 스타일링 */
+.btn{
+    display: inline-block; /*a요소는 inline요소...사이즈 조절이 안됨. 그래서 변경*/
+    width: 3.2rem;
+    padding: 1rem 0rem;
+    border: 1px solid #dddddd;
+    font-size: 1.2rem;
+}
+
+/* 선택한 요소의 배경색 및 글자색 변경 */
+.selected{
+    background-color: black;
+    color: white;
+    border-color: black;
+}

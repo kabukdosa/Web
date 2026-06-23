@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+
+  <link rel="stylesheet" href="./signup.css">
+  <script src="./signup.js" defer></script>
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="./play.html" class="main-logo">
+      <img src="./image/logo.png" alt="Acting Lesson 로고">
+    </a>
+
+    <div class="top-menu">
+      <a href="./login.html">로그인</a>
+      <span>|</span>
+      <a href="./signup.html">회원가입</a>
+    </div>
+  </div>
+
+  <header>
+    <h1>김지환 Acting Lesson</h1>
+    <p>회원가입 후 더욱 편리하게 이용하세요</p>
+  </header>
+
+  <section class="signup-section">
+
+<div class="signup-box">
+
+  <h2>회원가입</h2>
+
+  <form id="signupForm">
+
+    <input type="text" id="userName" name="name" placeholder="이름" required>
+
+    <input type="text" id="studentName" name="studentName" placeholder="아이 이름 (선택)">
+
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="이메일"
+      required>
+
+    <div class="password-wrap">
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="비밀번호"
+        required>
+
+      <img
+        src="./resource/eye.png"
+        class="togglePassword"
+        alt="비밀번호 보기">
+    </div>
+
+    <div class="password-wrap">
+      <input
+        type="password"
+        id="passwordConfirm"
+        placeholder="비밀번호 확인"
+        required>
+
+      <img
+        src="./resource/eye.png"
+        class="togglePassword"
+        alt="비밀번호 보기">
+    </div>
+
+    <p id="pwMessage"></p>
+
+    <label class="form-label">성별</label>
+
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="gender" value="남" required>
+        남
+      </label>
+
+      <label>
+        <input type="radio" name="gender" value="여" required>
+        여
+      </label>
+    </div>
+
+    <label class="form-label">생년월일</label>
+
+    <input
+      type="date"
+      id="birth"
+      name="birth"
+      required>
+
+    <label class="form-label">거주지역</label>
+
+    <select id="region" name="region" required>
+      <option value="">선택해주세요</option>
+      <option value="서울특별시">서울특별시</option>
+      <option value="인천광역시">인천광역시</option>
+      <option value="경기도">경기도</option>
+      <option value="기타지역">기타 지역</option>
+    </select>
+
+    <label class="form-label">보호자 연락처</label>
+
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      inputmode="numeric"
+      maxlength="13"
+      placeholder="010-0000-0000"
+      required>
+
+    <label class="agree-label">
+      <input type="checkbox" id="agree" required>
+      개인정보 수집 및 이용에 동의합니다.
+    </label>
+
+    <button type="submit" class="signup-btn">
+      회원가입
+    </button>
+
+  </form>
+
+  <p class="login-link">
+
+    이미 회원이신가요?
+
+    <a href="./login.html">
+      로그인
+    </a>
+
+  </p>
+
+</div>
+
+  </section>
+
+</body>
+</html>

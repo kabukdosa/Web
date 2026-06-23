@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>게시글 상세보기 - 김지환 Acting Lesson</title>
+
+  <link rel="stylesheet" href="./play.css">
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css"
+    rel="stylesheet">
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/@enzedonline/quill-blot-formatter2@3.2.0/dist/css/quill-blot-formatter2.css"
+    rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@enzedonline/quill-blot-formatter2@3.2.0/dist/index.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.js"></script>
+</head>
+<body>
+
+  <div class="top-bar">
+
+    <a href="./play.html" class="main-logo">
+      <img src="./image/logo.png" alt="Acting Lesson 로고">
+    </a>
+
+    <div class="top-menu">
+      <a href="./login.html" id="loginMenu">로그인</a>
+      <span id="loginBar1">|</span>
+      <a href="./signup.html" id="signupMenu">회원가입</a>
+
+      <span id="welcomeUser" style="display:none;"></span>
+      <span id="welcomeBar" style="display:none;">|</span>
+
+      <a href="./mypage.html" id="mypageMenu" style="display:none;">마이페이지</a>
+      <span id="loginBar2" style="display:none;">|</span>
+      <a href="#" id="logoutMenu" style="display:none;">로그아웃</a>
+    </div>
+
+  </div>
+
+  <main class="board-view-wrap">
+
+    <section class="board-view-box">
+
+      <h2 id="viewTitle"></h2>
+
+      <div class="view-info">
+        <span>작성자: <strong id="viewWriter"></strong></span>
+        <span>작성일: <strong id="viewDate"></strong></span>
+        <span>조회수: <strong id="viewViews"></strong></span>
+      </div>
+
+      <div id="viewImageWrap" class="view-image-wrap"></div>
+
+      <div id="viewContent" class="view-content"></div>
+
+      <div class="view-btn-wrap">
+        <button type="button" id="editPostBtn">수정</button>
+        <button type="button" id="deletePostBtn">삭제</button>
+        <button type="button" onclick="location.href='./play.html#board'">목록</button>
+      </div>
+
+    </section>
+
+    <section id="editPostBox" class="edit-post-box" style="display:none;">
+
+      <h2>게시글 수정</h2>
+
+      <input
+        type="text"
+        id="editPostTitle"
+        class="edit-title-input"
+        placeholder="제목을 입력하세요">
+
+      <div id="editBoardEditor" class="quill-editor"></div>
+
+      <div class="edit-btn-wrap">
+        <button type="button" id="saveEditPostBtn">수정 저장</button>
+        <button type="button" id="cancelEditPostBtn">취소</button>
+      </div>
+
+    </section>
+
+    <section class="comment-box">
+
+      <h3>댓글</h3>
+
+      <div id="commentList"></div>
+
+      <div class="comment-write">
+        <textarea
+          id="commentContent"
+          placeholder="댓글을 입력하세요"></textarea>
+
+        <button type="button" id="saveCommentBtn">댓글 등록</button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="./board_view.js"></script>
+</body>
+</html>

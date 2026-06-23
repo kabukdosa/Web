@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마이페이지</title>
+
+  <link rel="stylesheet" href="./mypage.css">
+  <script src="./mypage.js" defer></script>
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="./play.html" class="main-logo">
+      <img src="./image/logo.png" alt="Acting Lesson 로고">
+    </a>
+    <div class="top-menu">
+      <span id="welcomeUser" style="display:none;"></span>
+      <span id="welcomeBar" style="display:none;">|</span>
+
+      <a href="./play.html">홈</a>
+      <span>|</span>
+      <a href="#" id="topLogoutBtn">로그아웃</a>
+    </div>
+  </div>
+
+  <header>
+    <h1>마이페이지</h1>
+    <p>회원 정보를 확인하세요</p>
+  </header>
+
+  <section>
+
+    <div class="info-box">
+
+      <h2>회원 정보</h2>
+
+      <div class="member-info-wrap">
+
+        <div class="profile-area">
+
+          <div class="profile-image">
+            <img id="profileImg" src="" alt="프로필 사진">
+            <span id="profileEmoji">👦</span>
+          </div>
+
+          <div class="profile-photo-btn-wrap">
+            <label for="profilePhotoInput" class="profile-photo-btn">
+              사진 변경
+            </label>
+
+            <input
+              type="file"
+              id="profilePhotoInput"
+              accept="image/*"
+              hidden>
+          </div>
+
+        </div>
+
+        <table>
+          <tr>
+            <th>이름</th>
+            <td id="name">김지환</td>
+          </tr>
+
+          <tr>
+            <th>이메일</th>
+            <td id="email">test@test.com</td>
+          </tr>
+
+          <tr>
+            <th>연락처</th>
+            <td id="phone">010-1234-5678</td>
+          </tr>
+        </table>
+
+      </div>
+
+      <div class="info-btn-wrap">
+        <button type="button" id="editBtn">
+          회원정보 수정
+        </button>
+      </div>
+
+    </div>
+
+    <div id="editInfoBox" class="edit-info-box">
+
+      <h2>회원정보 수정</h2>
+
+      <form id="editInfoForm">
+
+        <label>이름</label>
+        <input type="text" id="editName">
+
+        <label>아이 이름</label>
+        <input type="text" id="editStudentName">
+
+        <label>이메일</label>
+        <input type="email" id="editEmail">
+
+        <label>비밀번호</label>
+        <div class="password-wrap">
+          <input type="password" id="editPassword">
+
+          <img
+            src="./resource/eye.png"
+            id="editTogglePassword"
+            alt="비밀번호 보기">
+        </div>
+
+        <label>성별</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="editGender" value="남">
+            남
+          </label>
+
+          <label>
+            <input type="radio" name="editGender" value="여">
+            여
+          </label>
+        </div>
+
+        <label>생년월일</label>
+        <input type="date" id="editBirth">
+
+        <label>거주지역</label>
+        <select id="editRegion">
+          <option value="">선택해주세요</option>
+          <option value="서울특별시">서울특별시</option>
+          <option value="인천광역시">인천광역시</option>
+          <option value="경기도">경기도</option>
+          <option value="기타지역">기타 지역</option>
+        </select>
+
+        <label>연락처</label>
+        <input
+          type="tel"
+          id="editPhone"
+          inputmode="numeric"
+          maxlength="13"
+          placeholder="010-0000-0000">
+
+        <div class="edit-btn-wrap">
+          <button type="submit">저장</button>
+          <button type="button" id="cancelEditBtn">취소</button>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="lesson-box">
+
+      <h2>레슨 내역</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>레슨일</th>
+            <th>레슨명</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>2026-06-19</td>
+            <td>1 대 1 레슨</td>
+            <td>레슨 완료</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="lesson-box">
+      <h2>내가 쓴 게시글</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성일</th>
+            <th>조회</th>
+          </tr>
+        </thead>
+
+        <tbody id="myPostTableBody">
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mypage-bottom-btns">
+      <button type="button" id="withdrawBtn" class="withdraw-btn">
+        회원 탈퇴
+      </button>
+
+      <button type="button" id="logoutBtn" class="logout-btn">
+        로그아웃
+      </button>
+    </div>
+  </section>
+
+</body>
+</html>

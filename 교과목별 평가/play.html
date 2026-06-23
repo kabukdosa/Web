@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인레슨</title>
+
+  <link rel="stylesheet" href="./play.css">
+  <link href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.js"></script>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/@enzedonline/quill-blot-formatter2@3.2.0/dist/css/quill-blot-formatter2.css"
+    rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/@enzedonline/quill-blot-formatter2@3.2.0/dist/index.js"></script>
+
+  <script src="./play.js" defer></script>
+
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=44a8662baae34b0358743c91cce1d9ac"></script>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <a href="./play.html" class="main-logo">
+      <img src="./image/logo.png" alt="Acting Lesson 로고">
+    </a>
+
+    <div class="top-menu">
+      <a href="./login.html" id="loginMenu">로그인</a>
+      <span id="loginBar1">|</span>
+      <a href="./signup.html" id="signupMenu">회원가입</a>
+
+      <span id="welcomeUser" style="display:none;"></span>
+      <span id="welcomeBar" style="display:none;">|</span>
+
+      <a href="./mypage.html" id="mypageMenu" style="display:none;">마이페이지</a>
+      <span id="loginBar2" style="display:none;">|</span>
+      <a href="#" id="logoutMenu" style="display:none;">로그아웃</a>
+    </div>
+  </div>
+
+  <header>
+    <h1>김지환 선생님과 함께하는 <br> Acting Lesson</h1>
+    <p>아역배우 연기 개인레슨 · 오디션 대비</p>
+  </header>
+
+  <nav>
+    <a href="#teacher">선생님 소개</a>
+    <a href="#curriculum">교육 과정</a>
+    <a href="#lesson">레슨 신청</a>
+    <a href="#board">게시판</a>
+    <a href="#location">레슨 장소</a>
+  </nav>
+
+  <section id="teacher">
+    <div class="box">
+      <h2>선생님 소개</h2>
+
+      <div class="teacher-profile">
+        <div class="teacher-photo">
+          <img src="./image/ms14.png" alt="김지환">
+        </div>
+
+        <div class="teacher-info">
+          <h3>김지환 선생님</h3>
+          <p class="job">아역배우 전문 연기 코치</p>
+          <p>드라마, 영화, 오디션 현장에서 꼭 필요한 1:1 맞춤 연기 지도를 진행합니다.</p>
+
+          <div class="career-section">
+            <h4>학력</h4>
+            <ul>
+              <li>단국대학교 공연영화학부 뮤지컬 전공</li>
+            </ul>
+          </div>
+
+          <div class="career-section">
+            <h4>경력</h4>
+            <ul>
+              <li>씨앤씨스쿨 연기학원 아역교육팀 대리</li>
+              <li>배우마당 연기학원 아역교육팀 전임강사</li>
+              <li>JS 연기아카데미 초등/중등 연기강사</li>
+              <li>액터스엘 연기학원 입시 연기강사</li>
+              <li>아티스방송예술원 연기/뮤지컬 강사</li>
+              <li>KS 트레이닝센터 하이틴 연기강사</li>
+              <li>서울대 사범대 부설여중 직업체험 강사</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="curriculum">
+    <div class="box">
+      <h2>교육 과정</h2>
+
+      <div class="card-wrap">
+        <div class="card">
+          <h3>기초</h3>
+          <p>발성, 발음, 자신감</p>
+        </div>
+
+        <div class="card">
+          <h3>심화</h3>
+          <p>감정, 장면, 캐릭터 분석</p>
+        </div>
+
+        <div class="card">
+          <h3>오디션</h3>
+          <p>대본 분석, 모의 오디션</p>
+        </div>
+
+        <div class="card">
+          <h3>입시</h3>
+          <p>예고 & 대학교 입시</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="lesson">
+    <div class="box">
+      <h2>레슨 상담 신청</h2>
+
+      <form id="lessonForm">
+
+        <label>이름</label>
+        <input
+          type="text"
+          id="studentName"
+          placeholder="아이 이름을 쓰세요."
+          required>
+
+        <label>성별</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="gender" value="남" required>
+            남
+          </label>
+
+          <label>
+            <input type="radio" name="gender" value="여" required>
+            여
+          </label>
+        </div>
+
+        <label>생년월일</label>
+        <input type="date" id="birth" required>
+
+        <label>거주지역</label>
+        <select id="region" required>
+          <option value="">선택해주세요</option>
+          <option value="서울특별시">서울특별시</option>
+          <option value="인천광역시">인천광역시</option>
+          <option value="경기도">경기도</option>
+          <option value="기타지역">기타 지역</option>
+        </select>
+
+        <label>연기 경험</label>
+        <select id="experience">
+          <option>없음</option>
+          <option>1년 이내</option>
+          <option>1년 이상</option>
+          <option>2년 이상</option>
+        </select>
+
+        <label>보호자 연락처</label>
+        <input
+          type="tel"
+          id="phone"
+          inputmode="numeric"
+          maxlength="13"
+          placeholder="010-0000-0000"
+          required>
+
+        <label>희망 레슨</label>
+        <select id="lessonType" required>
+          <option>1 대 1 레슨</option>
+          <option>2 대 1 레슨</option>
+          <option>오디션 레슨</option>
+          <option>예고 입시 레슨</option>
+          <option>대학교 입시 레슨</option>
+          <option>기타</option>
+        </select>
+
+        <button type="submit">상담 신청하기</button>
+
+      </form>
+    </div>
+  </section>
+
+  <section id="board">
+    <div class="box">
+
+      <div class="board-title-wrap">
+        <h2>게시판</h2>
+        <button type="button" id="writeBtn" class="write-btn">
+          글쓰기
+        </button>
+      </div>
+
+      <div id="writeBox" class="write-box">
+
+        <h3>게시글 작성</h3>
+
+        <input type="text" id="boardTitle" placeholder="제목을 입력하세요">
+        <input type="text" id="boardWriter" placeholder="작성자" readonly>
+
+        <div id="boardEditor" class="quill-editor"></div>
+
+        <div class="write-actions">
+          <button type="button" id="savePostBtn">등록</button>
+          <button type="button" id="cancelPostBtn">취소</button>
+        </div>
+
+      </div>
+
+      <table class="board-table">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회</th>
+          </tr>
+        </thead>
+
+        <tbody id="boardTableBody">
+        </tbody>
+      </table>
+
+    </div>
+  </section>
+
+  <section id="location">
+    <div class="box">
+      <h2>레슨 장소</h2>
+
+      <div id="map" class="map-box"></div>
+
+      <table class="location-table">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>장소</th>
+            <th>주소</th>
+          </tr>
+        </thead>
+
+        <tbody id="locationTableBody">
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 김지환 Acting Lesson<br>
+    문의 : 010-0000-0000
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "Web",
+			"path": "Web"
+		}
+	],
+	"settings": {
+		"python-envs.pythonProjects": [
+			{
+				"path": "교과목별 평가",
+				"envManager": "ms-python.python:venv",
+				"packageManager": "ms-python.python:pip"
+			}
+		]
+	}
+}
